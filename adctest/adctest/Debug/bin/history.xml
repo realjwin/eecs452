@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=adctest.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\adctest -TC:\CooCox\CoIDE\configuration\ProgramData\adctest/arm-gcc-link.ld -g">
+      <target file="adctest.elf" lastModified="14c4332a93a">
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="14c4332a581"/>
+         <source file="..\obj\main.o" lastModified="14c4332a5c0"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="14c4332a62d"/>
+         <source file="..\obj\stm32f4xx_adc.o" lastModified="14c4332a69a"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="14c4332a6f8"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="14c4332a746"/>
+      </target>
+   </processor>
+</history>

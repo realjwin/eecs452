@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=startingpoint.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\startingpoint -TC:\CooCox\CoIDE\configuration\ProgramData\startingpoint/arm-gcc-link.ld -g">
+      <target file="startingpoint.elf" lastModified="14c1f4e34bc">
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="14c1f12eaa6"/>
+         <source file="..\obj\main.o" lastModified="14c1f4e32ab"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="14c1f13216a"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="14c1f1321c8"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="14c1f132206"/>
+      </target>
+   </processor>
+</history>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\adctodactest\semihosting -I..\..\..\workspace\adctodactest\cmsis_boot -I..\..\..\workspace -I..\..\..\workspace\adctodactest -I..\..\..\workspace\adctodactest\cmsis_lib\include -I..\..\.. -I..\..\..\workspace\adctodactest\cmsis_lib -I..\..\..\workspace\adctodactest\cmsis">
+      <target file="stm32f4xx_gpio.o" lastModified="14c619695e8">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="14c4359f898"/>
+      </target>
+      <target file="stm32f4xx_adc.o" lastModified="14c6196954c">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="14c4359f84a"/>
+      </target>
+      <target file="printf.o" lastModified="14c4d94e451">
+         <source file="..\..\..\stdio\printf.c" lastModified="14c4803f498"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="14c61969627">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="14c61968202"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="14c4d94e2a9">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="14c4359f85a"/>
+      </target>
+      <target file="main.o" lastModified="14c61a02d31">
+         <source file="..\..\..\main.c" lastModified="14c61a02ad3"/>
+      </target>
+      <target file="stm32f4xx_dac.o" lastModified="14c61969404">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dac.c" lastModified="14c4749acce"/>
+      </target>
+      <target file="sh_cmd.o" lastModified="14c4d94e577">
+         <source file="..\..\..\semihosting\sh_cmd.s" lastModified="14c47ff3d5e"/>
+      </target>
+      <target file="adc_setup.o" lastModified="14c61b9a028">
+         <source file="..\..\..\adc_setup.c" lastModified="14c61b99604"/>
+      </target>
+      <target file="semihosting.o" lastModified="14c4d94e1f9">
+         <source file="..\..\..\semihosting\semihosting.c" lastModified="14c47ff3d5e"/>
+      </target>
+      <target file="dac_setup.o" lastModified="14c61969656">
+         <source file="..\..\..\dac_setup.c" lastModified="14c47ecacb7"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="14c619694df">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="14c4359f889"/>
+      </target>
+   </processor>
+</history>

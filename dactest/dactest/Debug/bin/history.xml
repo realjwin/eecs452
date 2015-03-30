@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=dactest.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\dactest -TC:\CooCox\CoIDE\configuration\ProgramData\dactest/arm-gcc-link.ld -g">
+      <target file="dactest.elf" lastModified="14c293bc376">
+         <source file="..\obj\stm32f4xx_syscfg.o" lastModified="14c2936e5df"/>
+         <source file="..\obj\DAC_SignalsGeneration.o" lastModified="14c293bc157"/>
+         <source file="..\obj\stm32f4xx_dac.o" lastModified="14c2936e689"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="14c293549c3"/>
+         <source file="..\obj\main.o" lastModified="14c293549ef"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="14c2936e6f1"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="14c2936e741"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="14c2936e77d"/>
+         <source file="..\obj\stm32f4xx_dma.o" lastModified="14c2936e7dd"/>
+         <source file="..\obj\stm32f4xx_exti.o" lastModified="14c2936e81e"/>
+         <source file="..\obj\misc.o" lastModified="14c2936e86a"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="14c2936e92a"/>
+      </target>
+   </processor>
+</history>

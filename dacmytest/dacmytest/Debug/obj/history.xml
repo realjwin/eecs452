@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\dacmytest\cmsis_lib\include -I..\..\..\workspace -I..\..\..\workspace\dacmytest -I..\..\..\workspace\dacmytest\cmsis_lib -I..\..\..\workspace\dacmytest\cmsis_boot -I..\..\..\workspace\dacmytest\cmsis">
+      <target file="stm32f4xx_gpio.o" lastModified="14c3e1e6019">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="14c3cdfe29a"/>
+      </target>
+      <target file="stm32f4xx_dma.o" lastModified="14c3e1e60b5">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="14c3ce1eb15"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="14c3e1e61f3">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="14c3ce00eab"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="14c3e1e6057">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="14c3cdfd076"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="14c3e1e5ef0">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="14c3cdfd05d"/>
+      </target>
+      <target file="stm32f4xx_syscfg.o" lastModified="14c3e1e5e63">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="14c3ce317b5"/>
+      </target>
+      <target file="stm32f4xx_exti.o" lastModified="14c3e1e60ed">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="14c3ce40fbe"/>
+      </target>
+      <target file="stm32f4xx_dac.o" lastModified="14c3e1e5ec1">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dac.c" lastModified="14c3cdff4e8"/>
+      </target>
+      <target file="main.o" lastModified="14c3e2de725">
+         <source file="..\..\..\main.c" lastModified="14c3e2d97c5"/>
+      </target>
+      <target file="dacmytest.o" lastModified="14c3e3f9d41">
+         <source file="..\..\..\dacmytest.c" lastModified="14c3e3f97f2"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="14c3e1e5fcb">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="14c3cdfe2b4"/>
+      </target>
+      <target file="misc.o" lastModified="14c3e1e613b">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="14c3ce21e07"/>
+      </target>
+   </processor>
+</history>
