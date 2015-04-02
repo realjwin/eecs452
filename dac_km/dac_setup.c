@@ -16,7 +16,8 @@ a timer counts to a specified value
 //NOTE: These should really go in .h file
 /*--Defines--*/
 #define PI 	3.14159265
-#define N 	256
+#define BN 	8 //number of bits needed for sine table size
+#define N 	256 //size of sine table
 
 /*--Initialization Structures--*/
 static GPIO_InitTypeDef 		GPIO_InitStructure; //GPIO
@@ -27,7 +28,13 @@ static DAC_InitTypeDef 			DAC_InitStructure; 	//DAC
 /*--DDS Variables--*/
 //NOTE: Sine table is only positive values because of DAC (also dac is 12 bits)
 uint16_t sine_table[N];
-uint16_t dds_counter1 = 0, dds_counter2 = 0, ftv = 1;
+uint16_t dds_counter0 = 0, dds_counter1 = 0, ftv0 = 1, ftv1 = 1;
+uint16_t value = 0;
+
+int16_t send_data_flag = 0; //0 if no data to send otherwise 1
+uint32_t data_counter_sample = 0, data_counter_bit = 0; //counter for how long to hold bit and which bit were on
+uint32_t max_hold = 10000; //maximum number of smaples for each data bit @ 40 kHz there are 4 samples to cycle
+uint16_t data_frame[11];
 
 
 /*--Configure DAC1--*/
@@ -129,16 +136,44 @@ void DAC1_Interrupt_Config(void) {
 	NVIC_Init(&NVIC_InitStructure);
 }
 
-void DAC1_DDS_Config(uint32_t sample_rate, uint32_t target_frequency) {
+void DAC1_DDS_Config(uint32_t sample_rate, uint32_t freq0, uint32_t freq1) {
 	//Create sine table
 	int16_t i = 0;
 	for(i = 0; i < N; i++) {
-		sine_table[i] = (4095/2)*sin(2*PI*i/(float)N)+(4095/2);
+		sine_table[i] = (3000/2)*sin(2*PI*i/(float)N)+(3500/2);
 	}
 
 	//f0 = FTV * fs/(2^Bftv)
-	ftv = (1<<16)*(float)target_frequency/(float)sample_rate;
+	ftv0 = (1<<16)*(float)freq0/(float)sample_rate;
+	ftv1 = (1<<16)*(float)freq1/(float)sample_rate;
+}
 
+void DAC1_SendData(char* data_string) {
+	//for now this will just create an array of one frame to repeat with a letter (eventually string)
+
+	//start bit
+	data_frame[0] = 0;
+
+	//just putting in random
+	data_frame[1] = 0;
+	data_frame[2] = 1;
+	data_frame[3] = 0;
+	data_frame[4] = 1;
+	data_frame[5] = 0;
+	data_frame[6] = 1;
+	data_frame[7] = 0;
+	data_frame[8] = 1;
+
+	//stop bits
+	data_frame[9] = 1;
+	data_frame[10] = 1;
+
+	//set send_data_flag
+	send_data_flag = 1;
+}
+
+int16_t DAC1_SendData_Done(void) {
+	return send_data_flag;
 }
 
 void TIM6_DAC_IRQHandler(void) {
@@ -146,20 +181,43 @@ void TIM6_DAC_IRQHandler(void) {
 	//how exactly does this BSRRL work
 	GPIOE->BSRRL = GPIO_Pin_9; //used to time interrupt duration
 
-	if(dds_counter1 == N) {
-		dds_counter1 = 0;
+	if(send_data_flag == 0) {
+		//send mark signal
+		value = sine_table[dds_counter1>>BN];
+		DAC_SetChannel1Data(DAC_Align_12b_R, value);
+		dds_counter1 += ftv1;
 	}
 
-	uint16_t value = sine_table[dds_counter1];
+	if(send_data_flag == 1) {
+		//send each data frame
 
-	dds_counter2++;
+		//if the data is a 1
+		if(data_frame[data_counter_bit] == 1) {
+			value = sine_table[dds_counter1>>BN];
+			DAC_SetChannel1Data(DAC_Align_12b_R, value);
+			dds_counter1 += ftv1;
+			++data_counter_sample;
+		}
+		else {
+			value = sine_table[dds_counter0>>BN];
+			value = 0;
+			DAC_SetChannel1Data(DAC_Align_12b_R, value);
+			dds_counter0 += ftv0;
+			++data_counter_sample;
+		}
 
-	if(dds_counter2 == ftv) {
-		dds_counter1++;
-		dds_counter2 = 0;
+		//if we are at the end of a data bit
+		if(data_counter_sample == max_hold) {
+			data_counter_sample = 0;
+			data_counter_bit += 1;
+
+			//if we are at the end of the frame
+			if(data_counter_bit == 11) {
+				data_counter_bit = 0;
+				//send_data_flag = 0;
+			}
+		}
 	}
-
-	DAC_SetChannel1Data(DAC_Align_12b_R, value); //dac1 flag = 1?
 
 	//what is the point of doing this??
 	TIM_ClearITPendingBit(TIM6,TIM_IT_Update);

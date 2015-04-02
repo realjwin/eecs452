@@ -31,12 +31,13 @@ void DAC1_Timer_Config(uint32_t sample_rate);
 
 void DAC1_Interrupt_Config(void);
 
-void DAC1_DDS_Config(uint32_t sample_rate, uint32_t target_frequency);
+void DAC1_DDS_Config(uint32_t sample_rate, uint32_t freq0, uint32_t freq1);
 
-/*Starts DAC1 at upper frequency*/
-//void DAC1_Start();
 /**/
-//void DAC1_SendData();
+void DAC1_SendData(char* data_string);
+
+int16_t DAC1_SendData_Done(void);
+
 /**/
 //void DAC1_IsDone();
 //void Handler();

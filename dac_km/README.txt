@@ -1,0 +1,3 @@
+-This is current receiver code
+-Generates a signal based on some bits and repeats the frame
+-Needs to be cleaned up significantly

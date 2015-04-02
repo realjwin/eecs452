@@ -8,8 +8,20 @@
 
 int main(void)
 {
+	uint32_t sample_rate = 160000, freq0 = 38500, freq1 = 40500;
+	char string[10] = "hello";
 	SystemInit();
-	DAC1_Config(100000);
-	DAC1_DDS_Config(100000, 200);
+	DAC1_DDS_Config(sample_rate, freq0, freq1);
+	DAC1_Config(sample_rate);
+	DAC1_SendData(string);
+
+	/*while(1) {
+		if(DAC1_SendData_Done() == 0) {
+			int16_t i = 0;
+			for(i = 0; i < 100000; i++);
+			DAC1_SendData(string);
+		}
+	}*/
+
 	while(1);
 }
