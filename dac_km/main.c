@@ -5,12 +5,14 @@
 #include "stm32f4xx_tim.h"
 #include "misc.h"
 #include "dac_setup.h"
+#include "support_setup.h"
 
 int main(void)
 {
 	uint32_t sample_rate = 160000, freq0 = 38500, freq1 = 40500;
 	char string[10] = "hello";
 	SystemInit();
+	Support_Config();
 	DAC1_DDS_Config(sample_rate, freq0, freq1);
 	DAC1_Config(sample_rate);
 	DAC1_SendData(string);

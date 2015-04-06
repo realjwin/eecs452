@@ -1,0 +1,4 @@
+-Create a new project with type ....407VG
+-Add CMSIS BOOT
+-Delete files in cmsis_boot folder (syscalls.c is not in here)
+-Put all files in normal directory (this way we know that the files were added and not replaced in cmsis_boot)

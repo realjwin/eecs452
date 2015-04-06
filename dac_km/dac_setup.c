@@ -178,8 +178,8 @@ int16_t DAC1_SendData_Done(void) {
 
 void TIM6_DAC_IRQHandler(void) {
 	
-	//how exactly does this BSRRL work
-	GPIOE->BSRRL = GPIO_Pin_9; //used to time interrupt duration
+	//how exactly does this BSRRL work - this sets pin high
+	GPIOE->BSRRL = GPIO_Pin_10; //used to time interrupt duration
 
 	if(send_data_flag == 0) {
 		//send mark signal
@@ -222,5 +222,5 @@ void TIM6_DAC_IRQHandler(void) {
 	//what is the point of doing this??
 	TIM_ClearITPendingBit(TIM6,TIM_IT_Update);
 
-	GPIOE->BSRRH = GPIO_Pin_9;
+	GPIOE->BSRRH = GPIO_Pin_10; //this sets pin low
 }
