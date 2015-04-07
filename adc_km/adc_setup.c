@@ -6,6 +6,8 @@ About: See adc_setup.h
 
 #include "adc_setup.h"
 
+#define NTAPS 51
+
 /*--Initialization Structures--*/
 static GPIO_InitTypeDef 		GPIO_InitStructure; 	//GPIO
 static TIM_TimeBaseInitTypeDef	TIM_InitStructure;		//Timer
@@ -15,10 +17,18 @@ static DAC_InitTypeDef			DAC_InitStructure; 		//DAC
 
 //ADC input
 uint16_t value=0;
-uint16_t counter=0;
+int16_t coef[NTAPS] =      {1182,  -2472,  -1322,     67,    519,   -344,   -789,    155,    863,
+							   -1,   -927,   -188,    944,    388,   -914,   -588,    835,    778,
+							 -707,   -940,    538,   1066,   -337,  -1146,    114,   1172,    114,
+							-1146,   -337,   1066,    538,   -940,   -707,    778,    835,   -588,
+							 -914,    388,    944,   -188,   -927,     -1,    863,    155,   -789,
+							 -344,    519,     67,  -1322,  -2472,   1182};
+							 
+int32_t reg[NTAPS + 1] = {0};
 
 /**/
 void ADC1_Config(uint32_t sample_rate) {
+
 	ADC_DeInit();
 
 	ADC1_GPIO_Config();
@@ -53,7 +63,7 @@ void ADC1_GPIO_Config(void) {
 	//for ADC1 on PC0 using IN10
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
 }
 
@@ -65,7 +75,7 @@ void ADC1_Timer_Config(uint32_t sample_rate) {
 	RCC_ClocksTypeDef RCC_Clocks; //to get current APB1 (PCLK1 speed)
 	uint32_t timer_period; //to set TIM3 counter
 
-	RCC_APB2PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE); //enable clock
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE); //enable clock
 
 	//determine TIM3 max counter
 	RCC_GetClocksFreq(&RCC_Clocks);
@@ -80,6 +90,7 @@ void ADC1_Timer_Config(uint32_t sample_rate) {
 	TIM_TimeBaseInit(TIM3, &TIM_InitStructure);
 	TIM_SelectOutputTrigger(TIM3, TIM_TRGOSource_Update);
 	TIM_Cmd(TIM3, ENABLE);
+
 }
 
 /**/
@@ -98,7 +109,7 @@ void DAC1_Config_All(void) {
 
 	GPIO_StructInit(&GPIO_InitStructure);
 
-	//for DAC1 on PA4
+	//for DAC1 on PA5
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
@@ -114,22 +125,47 @@ void DAC1_Config_All(void) {
 void ADC_IRQHandler(void) {
 
 	//how does this work??
-	GPIOE->BSRRL = GPIO_Pin_10;
+
+
 
 
 	//what is ADC_Inhibit_Flag??
 
 	value = ADC_GetConversionValue(ADC1);
-	if(value > 4095) {
-		value = 4095;
+	GPIOE->BSRRL = GPIO_Pin_10;
+	DAC_Output(FIR(value));
+	GPIOE->BSRRH = GPIO_Pin_10;
+	
+
+	ADC_ClearITPendingBit(ADC1,ADC_IT_EOC);
+
+	//then filtering stuff
+
+
+
+}
+
+//this returns a 16-bit Q15 value
+int16_t FIR(uint16_t value) {
+	uint16_t i;
+	int16_t temp;
+
+	//convert value (uint16_t) to 16-bit Q15
+	temp = (((int16_t)value)<<4)+0x8000;
+
+	//The actual filter work
+	for(i=0; i<NTAPS; i++)
+	{
+		reg[i] = (int32_t)temp * (int32_t)coef[i] + reg[i + 1];
 	}
 
-	if(counter > 4095) counter = 0;
-	//DAC_SetChannel1Data(DAC_Align_12b_R, counter);
-	++counter;
+	reg[0] = reg[0] + 0x00004000;		//  rounding
+	return (int16_t)(reg[0] >> 15);  	// Conversion from 32 Q30 to 16 Q15.
+}
 
-	//add dac stuff here
-	//then filtering stuff
-	GPIOE->BSRRH = GPIO_Pin_10;
+void DAC_Output(int16_t value) {
+	uint16_t temp;
 
+	temp = ((uint16_t)value-0x8000)>>4;
+	DAC_SetChannel1Data(DAC_Align_12b_R, temp);
 }

@@ -12,7 +12,7 @@ int main(void)
 {
 	SystemInit();
 	Support_Config();
-	//DAC1_Config_All();
+	DAC1_Config_All();
 	ADC1_Config(160000);
 	
 	while(1)

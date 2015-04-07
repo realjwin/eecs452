@@ -45,7 +45,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="dac_setup.c" partName="dac_setup.c" path="C:/CooCox/workspace/dac_km/dac_setup.c" title="dac_setup.c" tooltip="C:/CooCox/workspace/dac_km/dac_setup.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/dac_km/dac_setup.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5665" selectionTopPixel="2998"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4029" selectionTopPixel="1528"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/CooCox/workspace/dac_km/main.c" title="main.c" tooltip="C:/CooCox/workspace/dac_km/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/dac_km/main.c"/>
@@ -100,7 +100,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.coocox.builder.perspective.CoBuilder">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
 <alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
@@ -290,13 +290,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/dac_km/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/dac_km/support_setup.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/dac_km/support_setup.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/dac_km/dac_setup.h"/>
 </editors>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="455" y="0"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="510" y="0"/>
-</item>
 <item historyLabel="main.c" index="3">
 <position/>
 </item>
@@ -438,8 +433,14 @@
 <item historyLabel="main.c" index="8">
 <position info="not_deleted" x="352" y="0"/>
 </item>
-<item active="true" historyLabel="dac_setup.c" index="7">
+<item historyLabel="dac_setup.c" index="7">
 <position info="not_deleted" x="3050" y="0"/>
+</item>
+<item historyLabel="dac_setup.h" index="11">
+<position info="not_deleted" x="686" y="35"/>
+</item>
+<item active="true" historyLabel="dac_setup.c" index="7">
+<position info="not_deleted" x="4029" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -448,29 +449,29 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="adc_km/cmsis_boot/stm32f4xx.h">
+<persistable path="/adc_km/cmsis_boot/stm32f4xx.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="support_setup.c" tooltip="dac_km/support_setup.c">
 <persistable path="/dac_km/support_setup.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="support_setup.h" tooltip="dac_km/support_setup.h">
 <persistable path="/dac_km/support_setup.h"/>
 </file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_adc.c" tooltip="adc_km/cmsis_lib/source/stm32f4xx_adc.c">
 <persistable path="/adc_km/cmsis_lib/source/stm32f4xx_adc.c"/>
 </file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" tooltip="adc_km/cmsis_boot/startup/startup_stm32f4xx.c">
+<persistable path="/adc_km/cmsis_boot/startup/startup_stm32f4xx.c"/>
 </file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="support_setup.c" tooltip="dac_km/support_setup.c">
+<persistable path="/dac_km/support_setup.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="support_setup.h" tooltip="dac_km/support_setup.h">
+<persistable path="/dac_km/support_setup.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_adc.c" tooltip="adc_km/cmsis_lib/source/stm32f4xx_adc.c">
+<persistable path="/adc_km/cmsis_lib/source/stm32f4xx_adc.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="adc_setup.c" tooltip="adc_km/adc_setup.c">
 <persistable path="/adc_km/adc_setup.c"/>
@@ -478,32 +479,8 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" tooltip="adc_km/cmsis_boot/startup/startup_stm32f4xx.c">
 <persistable path="/adc_km/cmsis_boot/startup/startup_stm32f4xx.c"/>
 </file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
-</file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
-</file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="test/main.c">
-<persistable path="/test/main.c"/>
-</file>
 <file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>
-<subPage/>
-</persistable>
-</file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
+<persistable>&#x0A;<subPage/>
 </persistable>
 </file>
 </mruList>
