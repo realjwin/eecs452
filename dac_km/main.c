@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	uint32_t sample_rate = 160000, freq0 = 38500, freq1 = 40500;
+	uint32_t sample_rate = 160000, freq0 = 39100, freq1 = 39900;
 	char string[10] = "hello";
 	SystemInit();
 	Support_Config();

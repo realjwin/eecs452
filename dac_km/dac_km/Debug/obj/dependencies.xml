@@ -4,9 +4,6 @@
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_dac.h" lastModified="14c61f5af1b">
          <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\dac_setup.c" lastModified="14c9082ed3d">
-         <include file="..\..\..\dac_setup.h"/>
-      </source>
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="14c61f56ff3">
       </source>
       <source file="..\..\..\cmsis\core_cm4.h" lastModified="14c61f56beb">
@@ -48,7 +45,7 @@
       </source>
       <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="14c61f56fe3">
       </source>
-      <source file="..\..\..\main.c" lastModified="14c908014ee">
+      <source file="..\..\..\main.c" lastModified="14c9746b856">
          <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
@@ -58,13 +55,13 @@
          <include file="..\..\..\dac_setup.h"/>
          <include file="..\..\..\..\starting_point_files\support_setup.h"/>
       </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="14c61f57a11">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
       <source file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h" lastModified="14c4d01b9c8">
          <include file="..\..\..\cmsis\core_cm4.h"/>
          <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="14c61f57a11">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
       <source file="..\..\..\..\starting_point_files\support_setup.c" lastModified="14c9080423e">
          <include file="..\..\..\..\starting_point_files\support_setup.h"/>
@@ -91,48 +88,6 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_dac.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
-      </source>
-   </includePath>
-   <includePath signature="/I..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs /I..\..\..\..\workspace\dac_km\cmsis_lib /I..\..\..\..\workspace\dac_km /I..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4 /I..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project /I..\..\..\..\workspace\dac_km\cmsis_lib\include /I..\..\..\..\workspace\dac_km\cmsis /I..\..\..\..\workspace /I..\..\..\..\workspace\dac_km\cmsis_boot /I..\..\..\..">
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_dac.h" lastModified="14c61f5af1b">
-         <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\system_stm32f4xx.c" lastModified="14c4d019a88">
-         <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="14c61f567f7">
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="14c62401e97">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="14c61f589be">
-         <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="14c626c56b4">
-         <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="14c62401e88">
-         <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="14c626c56b4">
-         <include file="..\..\..\cmsis_lib\include\misc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="14c61f57a11">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_dac.c" lastModified="14c61f5af23">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_dac.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="14c61f567d7">
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="14c61f589c6">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="14c61f57a01">
-         <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
       </source>
    </includePath>
 </dependencies>

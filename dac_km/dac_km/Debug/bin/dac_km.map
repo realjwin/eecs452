@@ -906,17 +906,17 @@ OUTPUT(dac_km.elf elf32-littlearm)
  .debug_ranges  0x00000310       0x30 ..\obj\misc.o
  .debug_ranges  0x00000340      0x2e8 ..\obj\stm32f4xx_tim.o
 
-.debug_line     0x00000000     0x1f42
+.debug_line     0x00000000     0x1f41
  .debug_line    0x00000000      0x30e ..\obj\stm32f4xx_dac.o
  .debug_line    0x0000030e       0x94 ..\obj\startup_stm32f4xx.o
  .debug_line    0x000003a2      0x10a ..\obj\main.o
  .debug_line    0x000004ac      0x557 ..\obj\stm32f4xx_rcc.o
  .debug_line    0x00000a03      0x2f9 ..\obj\stm32f4xx_gpio.o
  .debug_line    0x00000cfc      0x1be ..\obj\system_stm32f4xx.o
- .debug_line    0x00000eba      0x2b7 ..\obj\dac_setup.o
- .debug_line    0x00001171      0x1b6 ..\obj\support_setup.o
- .debug_line    0x00001327      0x1fb ..\obj\misc.o
- .debug_line    0x00001522      0xa20 ..\obj\stm32f4xx_tim.o
+ .debug_line    0x00000eba      0x2b6 ..\obj\dac_setup.o
+ .debug_line    0x00001170      0x1b6 ..\obj\support_setup.o
+ .debug_line    0x00001326      0x1fb ..\obj\misc.o
+ .debug_line    0x00001521      0xa20 ..\obj\stm32f4xx_tim.o
 
 .debug_str      0x00000000     0x23a1
  .debug_str     0x00000000      0x3cc ..\obj\stm32f4xx_dac.o

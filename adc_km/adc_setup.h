@@ -33,7 +33,8 @@ void ADC1_Interrupt_Config(void);
 
 void DAC1_Config_All();
 
-int16_t FIR(uint16_t value);
+int16_t FIR(int16_t value, int16_t coef[], uint16_t numtaps, int32_t reg[]);
+
 void DAC_Output(int16_t value);
 
 /*END CODE*/

@@ -194,13 +194,13 @@ void TIM6_DAC_IRQHandler(void) {
 		//if the data is a 1
 		if(data_frame[data_counter_bit] == 1) {
 			value = sine_table[dds_counter1>>BN];
-			DAC_SetChannel1Data(DAC_Align_12b_R, value);
+			DAC_SetChannel1Data(DAC_Align_12b_R, value>>2);
 			dds_counter1 += ftv1;
 			++data_counter_sample;
 		}
 		else {
 			value = sine_table[dds_counter0>>BN];
-			value = 0;
+			//value = 0;
 			DAC_SetChannel1Data(DAC_Align_12b_R, value);
 			dds_counter0 += ftv0;
 			++data_counter_sample;

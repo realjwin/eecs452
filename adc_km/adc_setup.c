@@ -5,8 +5,7 @@ About: See adc_setup.h
 */
 
 #include "adc_setup.h"
-
-#define NTAPS 51
+#include "filters.h"
 
 /*--Initialization Structures--*/
 static GPIO_InitTypeDef 		GPIO_InitStructure; 	//GPIO
@@ -15,16 +14,14 @@ static NVIC_InitTypeDef			NVIC_InitStructure; 	//Interrupt
 static ADC_InitTypeDef 			ADC_InitStructure; 		//ADC
 static DAC_InitTypeDef			DAC_InitStructure; 		//DAC
 
-//ADC input
+//ADC variables
 uint16_t value=0;
-int16_t coef[NTAPS] =      {1182,  -2472,  -1322,     67,    519,   -344,   -789,    155,    863,
-							   -1,   -927,   -188,    944,    388,   -914,   -588,    835,    778,
-							 -707,   -940,    538,   1066,   -337,  -1146,    114,   1172,    114,
-							-1146,   -337,   1066,    538,   -940,   -707,    778,    835,   -588,
-							 -914,    388,    944,   -188,   -927,     -1,    863,    155,   -789,
-							 -344,    519,     67,  -1322,  -2472,   1182};
-							 
-int32_t reg[NTAPS + 1] = {0};
+int32_t reg_lp[NTAPS_LP + 1] = {0};
+int32_t reg_hp[NTAPS_HP + 1] = {0};
+int32_t reg_lp2_1[NTAPS_LP2 + 1] = {0};
+int32_t reg_lp2_2[NTAPS_LP2 + 1] = {0};
+int32_t reg_hp2[NTAPS_HP2 + 1] = {0};
+int16_t temp1 = 0, temp2 = 0, temp3 = 0; //temp value before going to FIR
 
 /**/
 void ADC1_Config(uint32_t sample_rate) {
@@ -90,7 +87,6 @@ void ADC1_Timer_Config(uint32_t sample_rate) {
 	TIM_TimeBaseInit(TIM3, &TIM_InitStructure);
 	TIM_SelectOutputTrigger(TIM3, TIM_TRGOSource_Update);
 	TIM_Cmd(TIM3, ENABLE);
-
 }
 
 /**/
@@ -123,40 +119,49 @@ void DAC1_Config_All(void) {
 }
 
 void ADC_IRQHandler(void) {
-
-	//how does this work??
-
-
-
-
-	//what is ADC_Inhibit_Flag??
-
+	GPIOE->BSRRL = GPIO_Pin_10; //set timing pin
+	//get ADC value
 	value = ADC_GetConversionValue(ADC1);
-	GPIOE->BSRRL = GPIO_Pin_10;
-	DAC_Output(FIR(value));
-	GPIOE->BSRRH = GPIO_Pin_10;
-	
+	//convert value (uint16_t) to 16-bit Q15
+	temp1 = (((int16_t)value)<<4)^0x8000;
+	temp1 = FIR(temp1, highpass2, NTAPS_HP2, reg_hp2); //this is to get rid of DC offset
 
+	//when looking at output on oscilloscope the transducers need to be farther apart
+	//or angled upwards to reduce saturation
+
+	//first filters
+	temp2 = FIR(temp1, lowpass, NTAPS_LP, reg_lp); //filter for freq0
+	temp3 = FIR(temp1, highpass, NTAPS_HP, reg_hp); //filter for freq1
+
+	//square it
+	temp2 = (int16_t)(((int32_t)(temp2*temp2))>>15) <<6;
+	temp3 = (int16_t)(((int32_t)(temp3*temp3))>>15) <<6;
+	//why do I have to left shift again to increase gain? Why is it so bad after squaring.
+
+
+
+	//second filters
+	temp2 = FIR(temp2, lowpass2, NTAPS_LP2, reg_lp2_1);
+	temp3 = FIR(temp3, lowpass2, NTAPS_LP2, reg_lp2_2);
+
+	//difference
+	temp1 = temp3 - temp2; //adding cause something's wrong
+	DAC_Output(temp1);
+	
+	//clear pending bit
 	ADC_ClearITPendingBit(ADC1,ADC_IT_EOC);
 
-	//then filtering stuff
-
-
-
+	GPIOE->BSRRH = GPIO_Pin_10; //release timing pin
 }
 
 //this returns a 16-bit Q15 value
-int16_t FIR(uint16_t value) {
+int16_t FIR(int16_t value, int16_t coef[], uint16_t numtaps, int32_t reg[]) {
 	uint16_t i;
-	int16_t temp;
-
-	//convert value (uint16_t) to 16-bit Q15
-	temp = (((int16_t)value)<<4)+0x8000;
 
 	//The actual filter work
-	for(i=0; i<NTAPS; i++)
+	for(i=0; i<numtaps; i++)
 	{
-		reg[i] = (int32_t)temp * (int32_t)coef[i] + reg[i + 1];
+		reg[i] = (int32_t)value * (int32_t)coef[i] + reg[i + 1];
 	}
 
 	reg[0] = reg[0] + 0x00004000;		//  rounding
@@ -166,6 +171,7 @@ int16_t FIR(uint16_t value) {
 void DAC_Output(int16_t value) {
 	uint16_t temp;
 
-	temp = ((uint16_t)value-0x8000)>>4;
+	temp = ((uint16_t)value^0x8000)>>4;
+
 	DAC_SetChannel1Data(DAC_Align_12b_R, temp);
 }
