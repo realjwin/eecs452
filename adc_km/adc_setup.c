@@ -23,6 +23,14 @@ int32_t reg_lp2_2[NTAPS_LP2 + 1] = {0};
 int32_t reg_hp2[NTAPS_HP2 + 1] = {0};
 int16_t temp1 = 0, temp2 = 0, temp3 = 0; //temp value before going to FIR
 
+//Demodulation
+uint16_t demod_synced = 0;
+uint16_t demod_counter = 0;
+uint16_t max_hold = 5000;
+int32_t temp_sum = 0;
+int16_t demod_output = 4095;
+uint16_t bit_counter = 0;
+
 /**/
 void ADC1_Config(uint32_t sample_rate) {
 
@@ -138,20 +146,43 @@ void ADC_IRQHandler(void) {
 	temp3 = (int16_t)(((int32_t)(temp3*temp3))>>15) <<6;
 	//why do I have to left shift again to increase gain? Why is it so bad after squaring.
 
-
-
 	//second filters
 	temp2 = FIR(temp2, lowpass2, NTAPS_LP2, reg_lp2_1);
 	temp3 = FIR(temp3, lowpass2, NTAPS_LP2, reg_lp2_2);
 
 	//difference
 	temp1 = temp3 - temp2; //adding cause something's wrong
-	DAC_Output(temp1);
+	//DAC_Output(temp1);
 	
+	//now demodulate
+	Demod(temp1);
+
 	//clear pending bit
 	ADC_ClearITPendingBit(ADC1,ADC_IT_EOC);
 
 	GPIOE->BSRRH = GPIO_Pin_10; //release timing pin
+}
+
+void Demod(int16_t input) {
+	if(input < 900 && demod_synced == 0) {
+		demod_synced = 1;
+		temp_sum = 0;
+	}
+	if(demod_synced == 1) {
+		temp_sum += input;
+		demod_counter++;
+		if(demod_counter == max_hold) {
+			temp_sum = temp_sum/max_hold; //find average
+			demod_output = temp_sum < 900 ? 0 : 4095; //set output
+			demod_counter = 0;
+			bit_counter++;
+			if(bit_counter == 11) {
+				demod_synced = 0;
+			}
+		}
+	}
+
+	DAC_SetChannel1Data(DAC_Align_12b_R, demod_output);
 }
 
 //this returns a 16-bit Q15 value

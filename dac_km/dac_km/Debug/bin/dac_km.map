@@ -39,7 +39,7 @@ Allocating common symbols
 Common symbol       size              file
 
 sine_table          0x200             ..\obj\dac_setup.o
-data_frame          0x16              ..\obj\dac_setup.o
+data_frame          0x28              ..\obj\dac_setup.o
 
 Discarded input sections
 
@@ -439,7 +439,7 @@ Linker script and memory map
 
                 0x20020000                _eram = 0x20020000
 
-.text           0x08000000     0x31c0
+.text           0x08000000     0x31e0
  *(.isr_vector)
  .isr_vector    0x08000000      0x188 ..\obj\startup_stm32f4xx.o
                 0x08000000                g_pfnVectors
@@ -592,122 +592,122 @@ Linker script and memory map
                 0x08000910      0x140 ..\obj\dac_setup.o
                 0x08000910                DAC1_DDS_Config
  .text.DAC1_SendData
-                0x08000a50       0x64 ..\obj\dac_setup.o
+                0x08000a50       0x84 ..\obj\dac_setup.o
                 0x08000a50                DAC1_SendData
  .text.TIM6_DAC_IRQHandler
-                0x08000ab4      0x148 ..\obj\dac_setup.o
-                0x08000ab4                TIM6_DAC_IRQHandler
+                0x08000ad4      0x148 ..\obj\dac_setup.o
+                0x08000ad4                TIM6_DAC_IRQHandler
  .text.Support_Config
-                0x08000bfc       0x40 ..\obj\support_setup.o
-                0x08000bfc                Support_Config
+                0x08000c1c       0x40 ..\obj\support_setup.o
+                0x08000c1c                Support_Config
  .text.NVIC_PriorityGroupConfig
-                0x08000c3c       0x24 ..\obj\misc.o
-                0x08000c3c                NVIC_PriorityGroupConfig
+                0x08000c5c       0x24 ..\obj\misc.o
+                0x08000c5c                NVIC_PriorityGroupConfig
  .text.NVIC_Init
-                0x08000c60       0xc0 ..\obj\misc.o
-                0x08000c60                NVIC_Init
+                0x08000c80       0xc0 ..\obj\misc.o
+                0x08000c80                NVIC_Init
  .text.TIM_TimeBaseInit
-                0x08000d20       0xd4 ..\obj\stm32f4xx_tim.o
-                0x08000d20                TIM_TimeBaseInit
- .text.TIM_Cmd  0x08000df4       0x40 ..\obj\stm32f4xx_tim.o
-                0x08000df4                TIM_Cmd
+                0x08000d40       0xd4 ..\obj\stm32f4xx_tim.o
+                0x08000d40                TIM_TimeBaseInit
+ .text.TIM_Cmd  0x08000e14       0x40 ..\obj\stm32f4xx_tim.o
+                0x08000e14                TIM_Cmd
  .text.TIM_ITConfig
-                0x08000e34       0x48 ..\obj\stm32f4xx_tim.o
-                0x08000e34                TIM_ITConfig
+                0x08000e54       0x48 ..\obj\stm32f4xx_tim.o
+                0x08000e54                TIM_ITConfig
  .text.TIM_ClearITPendingBit
-                0x08000e7c       0x20 ..\obj\stm32f4xx_tim.o
-                0x08000e7c                TIM_ClearITPendingBit
+                0x08000e9c       0x20 ..\obj\stm32f4xx_tim.o
+                0x08000e9c                TIM_ClearITPendingBit
  .text.TIM_SelectOutputTrigger
-                0x08000e9c       0x38 ..\obj\stm32f4xx_tim.o
-                0x08000e9c                TIM_SelectOutputTrigger
- .text.sin      0x08000ed4       0x94 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_sin.o)
-                0x08000ed4                sin
+                0x08000ebc       0x38 ..\obj\stm32f4xx_tim.o
+                0x08000ebc                TIM_SelectOutputTrigger
+ .text.sin      0x08000ef4       0x94 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_sin.o)
+                0x08000ef4                sin
  .text.__ieee754_rem_pio2
-                0x08000f68      0x448 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-e_rem_pio2.o)
-                0x08000f68                __ieee754_rem_pio2
+                0x08000f88      0x448 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-e_rem_pio2.o)
+                0x08000f88                __ieee754_rem_pio2
  .text.__kernel_cos
-                0x080013b0      0x248 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_cos.o)
-                0x080013b0                __kernel_cos
+                0x080013d0      0x248 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_cos.o)
+                0x080013d0                __kernel_cos
  .text.__kernel_rem_pio2
-                0x080015f8      0x808 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_rem_pio2.o)
-                0x080015f8                __kernel_rem_pio2
+                0x08001618      0x808 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_rem_pio2.o)
+                0x08001618                __kernel_rem_pio2
  .text.__kernel_sin
-                0x08001e00      0x170 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_sin.o)
-                0x08001e00                __kernel_sin
- .text.fabs     0x08001f70        0x8 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_fabs.o)
-                0x08001f70                fabs
- .text.floor    0x08001f78      0x118 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_floor.o)
-                0x08001f78                floor
- .text.scalbn   0x08002090      0x108 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_scalbn.o)
-                0x08002090                scalbn
+                0x08001e20      0x170 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_sin.o)
+                0x08001e20                __kernel_sin
+ .text.fabs     0x08001f90        0x8 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_fabs.o)
+                0x08001f90                fabs
+ .text.floor    0x08001f98      0x118 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_floor.o)
+                0x08001f98                floor
+ .text.scalbn   0x080020b0      0x108 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_scalbn.o)
+                0x080020b0                scalbn
  .text.copysign
-                0x08002198       0x10 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_copysign.o)
-                0x08002198                copysign
- .text          0x080021a8      0x370 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_addsubdf3.o)
-                0x080021a8                __aeabi_drsub
-                0x080021b0                __aeabi_dsub
-                0x080021b0                __subdf3
-                0x080021b4                __aeabi_dadd
-                0x080021b4                __adddf3
-                0x0800242c                __floatunsidf
-                0x0800242c                __aeabi_ui2d
-                0x0800244c                __floatsidf
-                0x0800244c                __aeabi_i2d
-                0x08002470                __aeabi_f2d
-                0x08002470                __extendsfdf2
-                0x080024ac                __floatundidf
-                0x080024ac                __aeabi_ul2d
-                0x080024bc                __floatdidf
-                0x080024bc                __aeabi_l2d
- .text          0x08002518      0x424 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_muldivdf3.o)
-                0x08002518                __aeabi_dmul
-                0x08002518                __muldf3
-                0x0800276c                __divdf3
-                0x0800276c                __aeabi_ddiv
- .text          0x0800293c      0x110 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_cmpdf2.o)
-                0x0800293c                __gtdf2
-                0x0800293c                __gedf2
-                0x08002944                __ltdf2
-                0x08002944                __ledf2
-                0x0800294c                __nedf2
-                0x0800294c                __eqdf2
-                0x0800294c                __cmpdf2
-                0x080029c8                __aeabi_cdrcmple
-                0x080029d8                __aeabi_cdcmpeq
-                0x080029d8                __aeabi_cdcmple
-                0x080029e8                __aeabi_dcmpeq
-                0x080029fc                __aeabi_dcmplt
-                0x08002a10                __aeabi_dcmple
-                0x08002a24                __aeabi_dcmpge
-                0x08002a38                __aeabi_dcmpgt
- .text          0x08002a4c       0x50 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_fixdfsi.o)
-                0x08002a4c                __aeabi_d2iz
-                0x08002a4c                __fixdfsi
- .text          0x08002a9c       0x40 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_fixunsdfsi.o)
-                0x08002a9c                __aeabi_d2uiz
-                0x08002a9c                __fixunsdfsi
- .text          0x08002adc      0x21c c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_addsubsf3.o)
-                0x08002adc                __aeabi_frsub
-                0x08002ae4                __subsf3
-                0x08002ae4                __aeabi_fsub
-                0x08002ae8                __aeabi_fadd
-                0x08002ae8                __addsf3
-                0x08002c48                __aeabi_ui2f
-                0x08002c48                __floatunsisf
-                0x08002c50                __aeabi_i2f
-                0x08002c50                __floatsisf
-                0x08002c6c                __aeabi_ul2f
-                0x08002c6c                __floatundisf
-                0x08002c7c                __aeabi_l2f
-                0x08002c7c                __floatdisf
- .text          0x08002cf8      0x2a0 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_muldivsf3.o)
-                0x08002cf8                __mulsf3
-                0x08002cf8                __aeabi_fmul
-                0x08002e60                __aeabi_fdiv
-                0x08002e60                __divsf3
- .text          0x08002f98       0x40 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_fixunssfsi.o)
-                0x08002f98                __fixunssfsi
-                0x08002f98                __aeabi_f2uiz
+                0x080021b8       0x10 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_copysign.o)
+                0x080021b8                copysign
+ .text          0x080021c8      0x370 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_addsubdf3.o)
+                0x080021c8                __aeabi_drsub
+                0x080021d0                __aeabi_dsub
+                0x080021d0                __subdf3
+                0x080021d4                __aeabi_dadd
+                0x080021d4                __adddf3
+                0x0800244c                __floatunsidf
+                0x0800244c                __aeabi_ui2d
+                0x0800246c                __floatsidf
+                0x0800246c                __aeabi_i2d
+                0x08002490                __aeabi_f2d
+                0x08002490                __extendsfdf2
+                0x080024cc                __floatundidf
+                0x080024cc                __aeabi_ul2d
+                0x080024dc                __floatdidf
+                0x080024dc                __aeabi_l2d
+ .text          0x08002538      0x424 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_muldivdf3.o)
+                0x08002538                __aeabi_dmul
+                0x08002538                __muldf3
+                0x0800278c                __divdf3
+                0x0800278c                __aeabi_ddiv
+ .text          0x0800295c      0x110 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_cmpdf2.o)
+                0x0800295c                __gtdf2
+                0x0800295c                __gedf2
+                0x08002964                __ltdf2
+                0x08002964                __ledf2
+                0x0800296c                __nedf2
+                0x0800296c                __eqdf2
+                0x0800296c                __cmpdf2
+                0x080029e8                __aeabi_cdrcmple
+                0x080029f8                __aeabi_cdcmpeq
+                0x080029f8                __aeabi_cdcmple
+                0x08002a08                __aeabi_dcmpeq
+                0x08002a1c                __aeabi_dcmplt
+                0x08002a30                __aeabi_dcmple
+                0x08002a44                __aeabi_dcmpge
+                0x08002a58                __aeabi_dcmpgt
+ .text          0x08002a6c       0x50 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_fixdfsi.o)
+                0x08002a6c                __aeabi_d2iz
+                0x08002a6c                __fixdfsi
+ .text          0x08002abc       0x40 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_fixunsdfsi.o)
+                0x08002abc                __aeabi_d2uiz
+                0x08002abc                __fixunsdfsi
+ .text          0x08002afc      0x21c c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_addsubsf3.o)
+                0x08002afc                __aeabi_frsub
+                0x08002b04                __subsf3
+                0x08002b04                __aeabi_fsub
+                0x08002b08                __aeabi_fadd
+                0x08002b08                __addsf3
+                0x08002c68                __aeabi_ui2f
+                0x08002c68                __floatunsisf
+                0x08002c70                __aeabi_i2f
+                0x08002c70                __floatsisf
+                0x08002c8c                __aeabi_ul2f
+                0x08002c8c                __floatundisf
+                0x08002c9c                __aeabi_l2f
+                0x08002c9c                __floatdisf
+ .text          0x08002d18      0x2a0 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_muldivsf3.o)
+                0x08002d18                __mulsf3
+                0x08002d18                __aeabi_fmul
+                0x08002e80                __aeabi_fdiv
+                0x08002e80                __divsf3
+ .text          0x08002fb8       0x40 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(_arm_fixunssfsi.o)
+                0x08002fb8                __fixunssfsi
+                0x08002fb8                __aeabi_f2uiz
  *(.init)
  *(.fini)
  *crtbegin.o(.ctors)
@@ -721,46 +721,46 @@ Linker script and memory map
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x08002fd8        0xc ..\obj\main.o
+ .rodata        0x08002ff8        0xc ..\obj\main.o
  .rodata.npio2_hw
-                0x08002fe4       0x80 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-e_rem_pio2.o)
+                0x08003004       0x80 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-e_rem_pio2.o)
  .rodata.two_over_pi
-                0x08003064      0x108 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-e_rem_pio2.o)
+                0x08003084      0x108 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-e_rem_pio2.o)
  .rodata.init_jk
-                0x0800316c       0x10 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_rem_pio2.o)
- *fill*         0x0800317c        0x4 
- .rodata.PIo2   0x08003180       0x40 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_rem_pio2.o)
+                0x0800318c       0x10 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_rem_pio2.o)
+ *fill*         0x0800319c        0x4 
+ .rodata.PIo2   0x080031a0       0x40 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-k_rem_pio2.o)
  *(.eh_fram e*)
 
-.glue_7         0x080031c0        0x0
+.glue_7         0x080031e0        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x080031c0        0x0
+.glue_7t        0x080031e0        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x080031c0        0x0
+.vfp11_veneer   0x080031e0        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x080031c0        0x0
+.v4_bx          0x080031e0        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x080031c0        0x0
+.iplt           0x080031e0        0x0
  .iplt          0x00000000        0x0 ..\obj\stm32f4xx_dac.o
 
-.rel.dyn        0x080031c0        0x0
+.rel.dyn        0x080031e0        0x0
  .rel.iplt      0x00000000        0x0 ..\obj\stm32f4xx_dac.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x080031c0                __exidx_start = .
+                0x080031e0                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x080031c0                __exidx_end = .
-                0x080031c0                __etext = .
-                0x080031c0                _sidata = __etext
+                0x080031e0                __exidx_end = .
+                0x080031e0                __etext = .
+                0x080031e0                _sidata = __etext
 
-.data           0x20000000       0x18 load address 0x080031c0
+.data           0x20000000       0x18 load address 0x080031e0
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -789,10 +789,10 @@ Linker script and memory map
                 0x20000018                __data_end__ = .
                 0x20000018                _edata = __data_end__
 
-.igot.plt       0x20000018        0x0 load address 0x080031d8
+.igot.plt       0x20000018        0x0 load address 0x080031f8
  .igot.plt      0x00000000        0x0 ..\obj\stm32f4xx_dac.o
 
-.bss            0x20000018      0x258 load address 0x080031d8
+.bss            0x20000018      0x268 load address 0x080031f8
                 0x20000018                . = ALIGN (0x4)
                 0x20000018                __bss_start__ = .
                 0x20000018                _sbss = __bss_start__
@@ -806,26 +806,25 @@ Linker script and memory map
                 0x2000004c                data_counter_bit
  .bss           0x20000050        0x8 ..\obj\support_setup.o
  *(COMMON)
- COMMON         0x20000058      0x216 ..\obj\dac_setup.o
+ COMMON         0x20000058      0x228 ..\obj\dac_setup.o
                 0x20000058                sine_table
                 0x20000258                data_frame
-                0x20000270                . = ALIGN (0x4)
- *fill*         0x2000026e        0x2 
-                0x20000270                __bss_end__ = .
-                0x20000270                _ebss = __bss_end__
+                0x20000280                . = ALIGN (0x4)
+                0x20000280                __bss_end__ = .
+                0x20000280                _ebss = __bss_end__
 
-.heap           0x20000270        0x0
-                0x20000270                __end__ = .
-                0x20000270                _end = __end__
-                0x20000270                end = __end__
+.heap           0x20000280        0x0
+                0x20000280                __end__ = .
+                0x20000280                _end = __end__
+                0x20000280                end = __end__
  *(.heap*)
-                0x20000270                __HeapLimit = .
+                0x20000280                __HeapLimit = .
 
-.co_stack       0x20000270      0x800 load address 0x08003430
-                0x20000270                . = ALIGN (0x8)
+.co_stack       0x20000280      0x800 load address 0x08003460
+                0x20000280                . = ALIGN (0x8)
  *(.co_stack .co_stack.*)
- .co_stack      0x20000270      0x800 ..\obj\startup_stm32f4xx.o
-                0x20000270                pulStack
+ .co_stack      0x20000280      0x800 ..\obj\startup_stm32f4xx.o
+                0x20000280                pulStack
                 0x20020000                __StackTop = (ORIGIN (ram) + 0x20000)
                 0x2001f800                __StackLimit = (__StackTop - SIZEOF (.co_stack))
                 0x20020000                PROVIDE (__stack, __StackTop)
@@ -848,17 +847,17 @@ LOAD c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none
 END GROUP
 OUTPUT(dac_km.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x4ec0
+.debug_info     0x00000000     0x4ecc
  .debug_info    0x00000000      0x63a ..\obj\stm32f4xx_dac.o
  .debug_info    0x0000063a       0xed ..\obj\startup_stm32f4xx.o
  .debug_info    0x00000727      0x12a ..\obj\main.o
  .debug_info    0x00000851      0xc4d ..\obj\stm32f4xx_rcc.o
  .debug_info    0x0000149e      0x602 ..\obj\stm32f4xx_gpio.o
  .debug_info    0x00001aa0      0x592 ..\obj\system_stm32f4xx.o
- .debug_info    0x00002032      0xa51 ..\obj\dac_setup.o
- .debug_info    0x00002a83      0x29f ..\obj\support_setup.o
- .debug_info    0x00002d22      0x53d ..\obj\misc.o
- .debug_info    0x0000325f     0x1c61 ..\obj\stm32f4xx_tim.o
+ .debug_info    0x00002032      0xa5d ..\obj\dac_setup.o
+ .debug_info    0x00002a8f      0x29f ..\obj\support_setup.o
+ .debug_info    0x00002d2e      0x53d ..\obj\misc.o
+ .debug_info    0x0000326b     0x1c61 ..\obj\stm32f4xx_tim.o
 
 .debug_abbrev   0x00000000      0xccb
  .debug_abbrev  0x00000000      0x17c ..\obj\stm32f4xx_dac.o
@@ -906,17 +905,17 @@ OUTPUT(dac_km.elf elf32-littlearm)
  .debug_ranges  0x00000310       0x30 ..\obj\misc.o
  .debug_ranges  0x00000340      0x2e8 ..\obj\stm32f4xx_tim.o
 
-.debug_line     0x00000000     0x1f41
+.debug_line     0x00000000     0x1f54
  .debug_line    0x00000000      0x30e ..\obj\stm32f4xx_dac.o
  .debug_line    0x0000030e       0x94 ..\obj\startup_stm32f4xx.o
  .debug_line    0x000003a2      0x10a ..\obj\main.o
  .debug_line    0x000004ac      0x557 ..\obj\stm32f4xx_rcc.o
  .debug_line    0x00000a03      0x2f9 ..\obj\stm32f4xx_gpio.o
  .debug_line    0x00000cfc      0x1be ..\obj\system_stm32f4xx.o
- .debug_line    0x00000eba      0x2b6 ..\obj\dac_setup.o
- .debug_line    0x00001170      0x1b6 ..\obj\support_setup.o
- .debug_line    0x00001326      0x1fb ..\obj\misc.o
- .debug_line    0x00001521      0xa20 ..\obj\stm32f4xx_tim.o
+ .debug_line    0x00000eba      0x2c9 ..\obj\dac_setup.o
+ .debug_line    0x00001183      0x1b6 ..\obj\support_setup.o
+ .debug_line    0x00001339      0x1fb ..\obj\misc.o
+ .debug_line    0x00001534      0xa20 ..\obj\stm32f4xx_tim.o
 
 .debug_str      0x00000000     0x23a1
  .debug_str     0x00000000      0x3cc ..\obj\stm32f4xx_dac.o

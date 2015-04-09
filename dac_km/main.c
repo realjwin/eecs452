@@ -15,6 +15,8 @@ int main(void)
 	Support_Config();
 	DAC1_DDS_Config(sample_rate, freq0, freq1);
 	DAC1_Config(sample_rate);
+
+
 	DAC1_SendData(string);
 
 	/*while(1) {

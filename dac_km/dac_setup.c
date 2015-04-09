@@ -33,8 +33,8 @@ uint16_t value = 0;
 
 int16_t send_data_flag = 0; //0 if no data to send otherwise 1
 uint32_t data_counter_sample = 0, data_counter_bit = 0; //counter for how long to hold bit and which bit were on
-uint32_t max_hold = 10000; //maximum number of smaples for each data bit @ 40 kHz there are 4 samples to cycle
-uint16_t data_frame[11];
+uint32_t max_hold = 5000; //maximum number of smaples for each data bit @ 40 kHz there are 4 samples to cycle
+uint16_t data_frame[20];
 
 
 /*--Configure DAC1--*/
@@ -168,6 +168,11 @@ void DAC1_SendData(char* data_string) {
 	data_frame[9] = 1;
 	data_frame[10] = 1;
 
+	uint16_t i = 0;
+	for(i = 11; i<20; i++) {
+		data_frame[i] = 1;
+	}
+
 	//set send_data_flag
 	send_data_flag = 1;
 }
@@ -212,7 +217,7 @@ void TIM6_DAC_IRQHandler(void) {
 			data_counter_bit += 1;
 
 			//if we are at the end of the frame
-			if(data_counter_bit == 11) {
+			if(data_counter_bit == 21) {
 				data_counter_bit = 0;
 				//send_data_flag = 0;
 			}

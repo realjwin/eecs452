@@ -81,8 +81,8 @@
   </Components>
   <Files>
     <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
-    <File name="dac_setup.h" path="dac_setup.h" type="1"/>
     <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
+    <File name="dac_setup.h" path="dac_setup.h" type="1"/>
     <File name="support_setup.h" path="../starting_point_files/support_setup.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
