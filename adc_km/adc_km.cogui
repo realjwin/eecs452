@@ -30,11 +30,11 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/CooCox/workspace/adc_km/main.c" title="main.c" tooltip="C:/CooCox/workspace/adc_km/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/adc_km/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="330" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="337" selectionTopPixel="0"/>
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="adc_setup.c" partName="adc_setup.c" path="C:/CooCox/workspace/adc_km/adc_setup.c" title="adc_setup.c" tooltip="C:/CooCox/workspace/adc_km/adc_setup.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/adc_km/adc_setup.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="2" selectionOffset="841" selectionTopPixel="368"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="922" selectionTopPixel="313"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="adc_setup.h" partName="adc_setup.h" path="C:/CooCox/workspace/adc_km/adc_setup.h" title="adc_setup.h" tooltip="C:/CooCox/workspace/adc_km/adc_setup.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/adc_km/adc_setup.h"/>
@@ -42,7 +42,7 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="filters.h" partName="filters.h" path="C:/CooCox/workspace/adc_km/filters.h" title="filters.h" tooltip="C:/CooCox/workspace/adc_km/filters.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/adc_km/filters.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="896" selectionTopPixel="23"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1878" selectionTopPixel="433"/>
 </editor>
 </editors>
 <views>
@@ -264,103 +264,31 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/adc_setup.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/adc_setup.h"/>
-<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
-<org.coocox.builder.ui.editors.ConfigEditor/>
-</editor>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/filters.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/filters.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/adc_setup.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/filters.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/adc_setup.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/filters.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/adc_setup.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/adc_setup.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/filters.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/adc_setup.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/filters.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/adc_setup.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/adc_km/main.c"/>
 </editors>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="937" y="0"/>
-</item>
-<item historyLabel="adc_setup.h" index="1">
-<position info="not_deleted" x="642" y="0"/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="4661" y="0"/>
-</item>
-<item historyLabel="adc_setup.h" index="1">
-<position info="not_deleted" x="642" y="0"/>
-</item>
-<item historyLabel="Configuration" index="2"/>
-<item historyLabel="adc_setup.h" index="1">
-<position info="not_deleted" x="678" y="11"/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="4661" y="0"/>
-</item>
-<item historyLabel="filters.h" index="3">
-<position info="not_deleted" x="840" y="0"/>
-</item>
-<item historyLabel="filters.h" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="732" y="0"/>
-</item>
-<item historyLabel="filters.h" index="3">
-<position info="not_deleted" x="703" y="0"/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="732" y="0"/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="4409" y="0"/>
-</item>
-<item historyLabel="filters.h" index="4">
-<position info="not_deleted" x="1873" y="0"/>
-</item>
-<item historyLabel="filters.h" index="4">
-<position info="not_deleted" x="1873" y="0"/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="4594" y="0"/>
-</item>
-<item historyLabel="filters.h" index="4">
-<position info="not_deleted" x="1873" y="0"/>
-</item>
-<item historyLabel="filters.h" index="4">
-<position/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="4776" y="0"/>
-</item>
-<item historyLabel="filters.h" index="4">
-<position info="not_deleted" x="1505" y="0"/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="4868" y="0"/>
-</item>
-<item historyLabel="filters.h" index="4">
-<position/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="4868" y="0"/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="4057" y="0"/>
-</item>
-<item historyLabel="adc_setup.c" index="0">
-<position info="not_deleted" x="618" y="0"/>
-</item>
-<item historyLabel="filters.h" index="4">
-<position/>
-</item>
 <item historyLabel="adc_setup.c" index="0">
 <position info="not_deleted" x="606" y="0"/>
 </item>
-<item historyLabel="filters.h" index="4">
+<item historyLabel="filters.h" index="1">
 <position/>
 </item>
 <item historyLabel="adc_setup.c" index="0">
 <position info="not_deleted" x="4772" y="0"/>
 </item>
-<item historyLabel="filters.h" index="4">
+<item historyLabel="filters.h" index="1">
 <position info="not_deleted" x="19" y="0"/>
 </item>
 <item historyLabel="adc_setup.c" index="0">
@@ -369,22 +297,22 @@
 <item historyLabel="adc_setup.c" index="0">
 <position/>
 </item>
-<item historyLabel="adc_setup.h" index="5">
+<item historyLabel="adc_setup.h" index="2">
 <position info="not_deleted" x="678" y="11"/>
 </item>
-<item historyLabel="filters.h" index="4">
+<item historyLabel="filters.h" index="1">
 <position info="not_deleted" x="1561" y="0"/>
 </item>
 <item historyLabel="adc_setup.c" index="0">
 <position info="not_deleted" x="4772" y="0"/>
 </item>
-<item historyLabel="adc_setup.h" index="5">
+<item historyLabel="adc_setup.h" index="2">
 <position info="not_deleted" x="678" y="11"/>
 </item>
-<item historyLabel="filters.h" index="4">
+<item historyLabel="filters.h" index="1">
 <position info="not_deleted" x="1561" y="0"/>
 </item>
-<item historyLabel="main.c" index="6">
+<item historyLabel="main.c" index="3">
 <position info="not_deleted" x="330" y="0"/>
 </item>
 <item historyLabel="adc_setup.c" index="0">
@@ -393,7 +321,7 @@
 <item historyLabel="adc_setup.c" index="0">
 <position/>
 </item>
-<item historyLabel="filters.h" index="7">
+<item historyLabel="filters.h" index="4">
 <position info="not_deleted" x="896" y="0"/>
 </item>
 <item historyLabel="adc_setup.c" index="0">
@@ -417,11 +345,89 @@
 <item historyLabel="adc_setup.c" index="0">
 <position info="not_deleted" x="5630" y="0"/>
 </item>
-<item historyLabel="adc_setup.h" index="8">
+<item historyLabel="adc_setup.h" index="5">
 <position info="not_deleted" x="607" y="0"/>
 </item>
-<item active="true" historyLabel="adc_setup.c" index="0">
+<item historyLabel="adc_setup.c" index="0">
 <position info="not_deleted" x="5210" y="26"/>
+</item>
+<item historyLabel="filters.h" index="6">
+<position info="not_deleted" x="896" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="329" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="8">
+<position/>
+</item>
+<item historyLabel="adc_setup.h" index="9">
+<position info="not_deleted" x="607" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="8">
+<position/>
+</item>
+<item historyLabel="filters.h" index="10">
+<position info="not_deleted" x="3090" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="8">
+<position info="not_deleted" x="4354" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="8">
+<position info="not_deleted" x="4396" y="0"/>
+</item>
+<item historyLabel="adc_setup.h" index="11">
+<position info="not_deleted" x="607" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="8">
+<position info="not_deleted" x="4335" y="0"/>
+</item>
+<item historyLabel="filters.h" index="12">
+<position/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position info="not_deleted" x="5768" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position info="not_deleted" x="5777" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position info="not_deleted" x="5805" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position info="not_deleted" x="5834" y="0"/>
+</item>
+<item historyLabel="main.c" index="14">
+<position info="not_deleted" x="337" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position info="not_deleted" x="700" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position info="not_deleted" x="4597" y="0"/>
+</item>
+<item historyLabel="filters.h" index="12">
+<position info="not_deleted" x="4064" y="0"/>
+</item>
+<item historyLabel="filters.h" index="12">
+<position info="not_deleted" x="1878" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position info="not_deleted" x="4597" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position info="not_deleted" x="4798" y="0"/>
+</item>
+<item historyLabel="adc_setup.c" index="13">
+<position/>
+</item>
+<item active="true" historyLabel="adc_setup.c" index="13">
+<position info="not_deleted" x="4854" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -430,15 +436,17 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="adc_setup.h" tooltip="adc_km/adc_setup.h">
+<persistable path="/adc_km/adc_setup.h"/>
 </file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="support_setup.h" tooltip="adc_km/support_setup.h">
+<persistable path="/adc_km/support_setup.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="adc_km/cmsis_boot/stm32f4xx.h">
+<persistable path="/adc_km/cmsis_boot/stm32f4xx.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="support_setup.c" tooltip="dac_km/support_setup.c">
+<persistable path="/dac_km/support_setup.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="adc_setup.h" tooltip="adc_km/adc_setup.h">
 <persistable path="/adc_km/adc_setup.h"/>
@@ -454,27 +462,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="support_setup.h" tooltip="dac_km/support_setup.h">
 <persistable path="/dac_km/support_setup.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_adc.c" tooltip="adc_km/cmsis_lib/source/stm32f4xx_adc.c">
-<persistable path="/adc_km/cmsis_lib/source/stm32f4xx_adc.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" tooltip="adc_km/cmsis_boot/startup/startup_stm32f4xx.c">
-<persistable path="/adc_km/cmsis_boot/startup/startup_stm32f4xx.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="support_setup.c" tooltip="dac_km/support_setup.c">
-<persistable path="/dac_km/support_setup.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="support_setup.h" tooltip="dac_km/support_setup.h">
-<persistable path="/dac_km/support_setup.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_adc.c" tooltip="adc_km/cmsis_lib/source/stm32f4xx_adc.c">
-<persistable path="/adc_km/cmsis_lib/source/stm32f4xx_adc.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="adc_setup.c" tooltip="adc_km/adc_setup.c">
-<persistable path="/adc_km/adc_setup.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" tooltip="adc_km/cmsis_boot/startup/startup_stm32f4xx.c">
-<persistable path="/adc_km/cmsis_boot/startup/startup_stm32f4xx.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="adc_setup.h" tooltip="adc_km/adc_setup.h">
 <persistable path="/adc_km/adc_setup.h"/>

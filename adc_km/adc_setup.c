@@ -16,20 +16,11 @@ static DAC_InitTypeDef			DAC_InitStructure; 		//DAC
 
 //ADC variables
 uint16_t value=0;
-int32_t reg_lp[NTAPS_LP + 1] = {0};
-int32_t reg_hp[NTAPS_HP + 1] = {0};
-int32_t reg_lp2_1[NTAPS_LP2 + 1] = {0};
-int32_t reg_lp2_2[NTAPS_LP2 + 1] = {0};
-int32_t reg_hp2[NTAPS_HP2 + 1] = {0};
+int32_t reg_bp0[NTAPS_BP0 + 1] = {0};
+int32_t reg_bp1[NTAPS_BP1 + 1] = {0};
+int32_t reg_lp_1[NTAPS_LP + 1] = {0};
+int32_t reg_lp_2[NTAPS_LP + 1] = {0};
 int16_t temp1 = 0, temp2 = 0, temp3 = 0; //temp value before going to FIR
-
-//Demodulation
-uint16_t demod_synced = 0;
-uint16_t demod_counter = 0;
-uint16_t max_hold = 5000;
-int32_t temp_sum = 0;
-int16_t demod_output = 4095;
-uint16_t bit_counter = 0;
 
 /**/
 void ADC1_Config(uint32_t sample_rate) {
@@ -113,7 +104,7 @@ void DAC1_Config_All(void) {
 
 	GPIO_StructInit(&GPIO_InitStructure);
 
-	//for DAC1 on PA5
+	//for DAC1 on PA4
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
@@ -132,57 +123,31 @@ void ADC_IRQHandler(void) {
 	value = ADC_GetConversionValue(ADC1);
 	//convert value (uint16_t) to 16-bit Q15
 	temp1 = (((int16_t)value)<<4)^0x8000;
-	temp1 = FIR(temp1, highpass2, NTAPS_HP2, reg_hp2); //this is to get rid of DC offset
 
-	//when looking at output on oscilloscope the transducers need to be farther apart
-	//or angled upwards to reduce saturation
-
-	//first filters
-	temp2 = FIR(temp1, lowpass, NTAPS_LP, reg_lp); //filter for freq0
-	temp3 = FIR(temp1, highpass, NTAPS_HP, reg_hp); //filter for freq1
+	temp2 = FIR(temp1, bandpass0, NTAPS_BP0, reg_bp0); //filter for freq0
+	temp3 = FIR(temp1, bandpass1, NTAPS_BP1, reg_bp1); //filter for freq1
 
 	//square it
-	temp2 = (int16_t)(((int32_t)(temp2*temp2))>>15) <<6;
-	temp3 = (int16_t)(((int32_t)(temp3*temp3))>>15) <<6;
-	//why do I have to left shift again to increase gain? Why is it so bad after squaring.
+	temp2 = (int16_t)(((int32_t)(temp2*temp2))>>15);
+	temp3 = (int16_t)(((int32_t)(temp3*temp3))>>15);
 
 	//second filters
-	temp2 = FIR(temp2, lowpass2, NTAPS_LP2, reg_lp2_1);
-	temp3 = FIR(temp3, lowpass2, NTAPS_LP2, reg_lp2_2);
+	temp2 = FIR(temp2, lowpass, NTAPS_LP, reg_lp_1);
+	temp3 = FIR(temp3, lowpass, NTAPS_LP, reg_lp_2);
 
 	//difference
-	temp1 = temp3 - temp2; //adding cause something's wrong
-	//DAC_Output(temp1);
+	temp1 = temp3 - temp2;
+
+	//hard clip
+	temp1 = temp1 > 0 ? 0x7FFF : 0x8000;
+	DAC_Output(temp1);
 	
 	//now demodulate
-	Demod(temp1);
 
 	//clear pending bit
 	ADC_ClearITPendingBit(ADC1,ADC_IT_EOC);
 
 	GPIOE->BSRRH = GPIO_Pin_10; //release timing pin
-}
-
-void Demod(int16_t input) {
-	if(input < 900 && demod_synced == 0) {
-		demod_synced = 1;
-		temp_sum = 0;
-	}
-	if(demod_synced == 1) {
-		temp_sum += input;
-		demod_counter++;
-		if(demod_counter == max_hold) {
-			temp_sum = temp_sum/max_hold; //find average
-			demod_output = temp_sum < 900 ? 0 : 4095; //set output
-			demod_counter = 0;
-			bit_counter++;
-			if(bit_counter == 11) {
-				demod_synced = 0;
-			}
-		}
-	}
-
-	DAC_SetChannel1Data(DAC_Align_12b_R, demod_output);
 }
 
 //this returns a 16-bit Q15 value
@@ -195,8 +160,11 @@ int16_t FIR(int16_t value, int16_t coef[], uint16_t numtaps, int32_t reg[]) {
 		reg[i] = (int32_t)value * (int32_t)coef[i] + reg[i + 1];
 	}
 
-	reg[0] = reg[0] + 0x00004000;		//  rounding
-	return (int16_t)(reg[0] >> 15);  	// Conversion from 32 Q30 to 16 Q15.
+	reg[0] = (reg[0] + 0x00004000) >> 15;		//  rounding and conversion
+	reg[0] = reg[0] > 32767 ? 32767:
+			reg[0] < -32768 ? -32768 : reg[0]; //overflow
+
+	return (int16_t)reg[0];
 }
 
 void DAC_Output(int16_t value) {

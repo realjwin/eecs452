@@ -4,8 +4,6 @@
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_dac.h" lastModified="14c90b7b34f">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\filters.h" lastModified="14c9ce1b9e9">
-      </source>
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="14c90b78bc8">
       </source>
       <source file="..\..\..\cmsis\core_cm4.h" lastModified="14c90b787d0">
@@ -13,7 +11,7 @@
          <include file="..\..\..\cmsis\core_cmFunc.h"/>
          <include file="..\..\..\cmsis\core_cm4_simd.h"/>
       </source>
-      <source file="..\..\..\adc_setup.h" lastModified="14ca03906ca">
+      <source file="..\..\..\adc_setup.h" lastModified="14ca91c3f42">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
@@ -71,7 +69,7 @@
       </source>
       <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="14c90b78bc8">
       </source>
-      <source file="..\..\..\main.c" lastModified="14c90dbee75">
+      <source file="..\..\..\main.c" lastModified="14ca4301464">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>

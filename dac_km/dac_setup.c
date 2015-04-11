@@ -33,7 +33,7 @@ uint16_t value = 0;
 
 int16_t send_data_flag = 0; //0 if no data to send otherwise 1
 uint32_t data_counter_sample = 0, data_counter_bit = 0; //counter for how long to hold bit and which bit were on
-uint32_t max_hold = 5000; //maximum number of smaples for each data bit @ 40 kHz there are 4 samples to cycle
+uint32_t max_hold = 2133; //maximum number of smaples for each data bit @ 40 kHz there are 4 samples to cycle
 uint16_t data_frame[20];
 
 
@@ -199,7 +199,7 @@ void TIM6_DAC_IRQHandler(void) {
 		//if the data is a 1
 		if(data_frame[data_counter_bit] == 1) {
 			value = sine_table[dds_counter1>>BN];
-			DAC_SetChannel1Data(DAC_Align_12b_R, value>>2);
+			DAC_SetChannel1Data(DAC_Align_12b_R, value);
 			dds_counter1 += ftv1;
 			++data_counter_sample;
 		}

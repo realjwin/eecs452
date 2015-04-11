@@ -4,6 +4,9 @@
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_dac.h" lastModified="14c61f5af1b">
          <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
       </source>
+      <source file="..\..\..\dac_setup.c" lastModified="14ca47bee91">
+         <include file="..\..\..\dac_setup.h"/>
+      </source>
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="14c61f56ff3">
       </source>
       <source file="..\..\..\cmsis\core_cm4.h" lastModified="14c61f56beb">
@@ -45,7 +48,7 @@
       </source>
       <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="14c61f56fe3">
       </source>
-      <source file="..\..\..\main.c" lastModified="14ca023ae4d">
+      <source file="..\..\..\main.c" lastModified="14ca43a252f">
          <include file="..\..\..\..\..\..\Users\Jacob\Dropbox\Sharing Folders\EECS 452 Project\engin100 labs\lab4\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>

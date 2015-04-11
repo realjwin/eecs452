@@ -595,33 +595,34 @@ Linker script and memory map
                 0x08000a50       0x84 ..\obj\dac_setup.o
                 0x08000a50                DAC1_SendData
  .text.TIM6_DAC_IRQHandler
-                0x08000ad4      0x148 ..\obj\dac_setup.o
+                0x08000ad4      0x144 ..\obj\dac_setup.o
                 0x08000ad4                TIM6_DAC_IRQHandler
  .text.Support_Config
-                0x08000c1c       0x40 ..\obj\support_setup.o
-                0x08000c1c                Support_Config
+                0x08000c18       0x40 ..\obj\support_setup.o
+                0x08000c18                Support_Config
  .text.NVIC_PriorityGroupConfig
-                0x08000c5c       0x24 ..\obj\misc.o
-                0x08000c5c                NVIC_PriorityGroupConfig
+                0x08000c58       0x24 ..\obj\misc.o
+                0x08000c58                NVIC_PriorityGroupConfig
  .text.NVIC_Init
-                0x08000c80       0xc0 ..\obj\misc.o
-                0x08000c80                NVIC_Init
+                0x08000c7c       0xc0 ..\obj\misc.o
+                0x08000c7c                NVIC_Init
  .text.TIM_TimeBaseInit
-                0x08000d40       0xd4 ..\obj\stm32f4xx_tim.o
-                0x08000d40                TIM_TimeBaseInit
- .text.TIM_Cmd  0x08000e14       0x40 ..\obj\stm32f4xx_tim.o
-                0x08000e14                TIM_Cmd
+                0x08000d3c       0xd4 ..\obj\stm32f4xx_tim.o
+                0x08000d3c                TIM_TimeBaseInit
+ .text.TIM_Cmd  0x08000e10       0x40 ..\obj\stm32f4xx_tim.o
+                0x08000e10                TIM_Cmd
  .text.TIM_ITConfig
-                0x08000e54       0x48 ..\obj\stm32f4xx_tim.o
-                0x08000e54                TIM_ITConfig
+                0x08000e50       0x48 ..\obj\stm32f4xx_tim.o
+                0x08000e50                TIM_ITConfig
  .text.TIM_ClearITPendingBit
-                0x08000e9c       0x20 ..\obj\stm32f4xx_tim.o
-                0x08000e9c                TIM_ClearITPendingBit
+                0x08000e98       0x20 ..\obj\stm32f4xx_tim.o
+                0x08000e98                TIM_ClearITPendingBit
  .text.TIM_SelectOutputTrigger
-                0x08000ebc       0x38 ..\obj\stm32f4xx_tim.o
-                0x08000ebc                TIM_SelectOutputTrigger
- .text.sin      0x08000ef4       0x94 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_sin.o)
-                0x08000ef4                sin
+                0x08000eb8       0x38 ..\obj\stm32f4xx_tim.o
+                0x08000eb8                TIM_SelectOutputTrigger
+ .text.sin      0x08000ef0       0x94 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-s_sin.o)
+                0x08000ef0                sin
+ *fill*         0x08000f84        0x4 
  .text.__ieee754_rem_pio2
                 0x08000f88      0x448 c:/coocox/coide/gcc/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libm.a(lib_a-e_rem_pio2.o)
                 0x08000f88                __ieee754_rem_pio2
